@@ -9,22 +9,31 @@ import (
 func main() {
 	input := os.Args
 	CaseNumber := input[1]
-	str := "sss"
-	check := contains(input, str)
-	if check {
+
+	switch true {
+	case "sss" == contains(input, "sss"):
 		CMD := " SHOW SUB SUM"
 		printer(CaseNumber, CMD)
+	case "sssa" == contains(input, "sssa"):
+		CMD := " SHOW SUB SUM ALL"
+		printer(CaseNumber, CMD)
+	case "asss" == contains(input, "asss"):
+		CMD := " APP SHOW SUB SUM"
+		printer(CaseNumber, CMD)
+	case "asssa" == contains(input, "asssa"):
+		CMD := " APP SHOW SUB SUM ALL"
+		printer(CaseNumber, CMD)
 	}
-
 }
 
-func contains(array []string, str string) bool {
+func contains(array []string, str string) string {
 	for _, a := range array {
 		if a == str {
-			return true
+			return str
 		}
 	}
-	return false
+	var none string
+	return none
 }
 
 func printer(CaseNumber string, CMD string) {
