@@ -12,12 +12,8 @@ func main() {
 	str := "sss"
 	check := contains(input, str)
 	if check {
-		words := []string{CaseNumber, "SHOW", "SUB", "SUM"}
-		joined := strings.Join(words, "_")
-		wordsnew := []string{"SR", joined}
-		joined = strings.Join(wordsnew, "")
-		fmt.Printf("ssh user@[Controller0IP] SHOW SUB SUB > %s_C0.txt\n", joined)
-		fmt.Printf("ssh user@[Controller1IP] SHOW SUB SUB > %s_C1.txt\n", joined)
+		CMD := " SHOW SUB SUM"
+		printer(CaseNumber, CMD)
 	}
 
 }
@@ -29,4 +25,12 @@ func contains(array []string, str string) bool {
 		}
 	}
 	return false
+}
+
+func printer(CaseNumber string, CMD string) {
+	a := "SR" + CaseNumber + CMD
+	s := strings.Split(a, " ")
+	joined := strings.Join(s, "_")
+	fmt.Printf("ssh user@[Controller0IP]%s > %s_C0.txt\n", CMD, joined)
+	fmt.Printf("ssh user@[Controller1IP]%s > %s_C1.txt\n", CMD, joined)
 }
