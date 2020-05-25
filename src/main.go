@@ -10,19 +10,22 @@ func main() {
 	input := os.Args
 	CaseNumber := input[1]
 
-	switch true {
-	case "sss" == contains(input, "sss"):
-		CMD := " SHOW SUB SUM"
-		printer(CaseNumber, CMD)
-	case "sssa" == contains(input, "sssa"):
-		CMD := " SHOW SUB SUM ALL"
-		printer(CaseNumber, CMD)
-	case "asss" == contains(input, "asss"):
-		CMD := " APP SHOW SUB SUM"
-		printer(CaseNumber, CMD)
-	case "asssa" == contains(input, "asssa"):
-		CMD := " APP SHOW SUB SUM ALL"
-		printer(CaseNumber, CMD)
+	for i := 2; i < len(input); i++ {
+		//	fmt.Println(input[i])
+		switch true {
+		case "sss" == contains(input, "sss"):
+			CMD := " SHOW SUB SUM"
+			printer(CaseNumber, CMD)
+		case "sssa" == contains(input, "sssa"):
+			CMD := " SHOW SUB SUM ALL"
+			printer(CaseNumber, CMD)
+		case "asss" == contains(input, "asss"):
+			CMD := " APP SHOW SUB SUM"
+			printer(CaseNumber, CMD)
+		case "asssa" == contains(input, "asssa"):
+			CMD := " APP SHOW SUB SUM ALL"
+			printer(CaseNumber, CMD)
+		}
 	}
 }
 
