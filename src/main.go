@@ -72,5 +72,5 @@ func printer(CaseNumber string, CMD string, cusname string) {
 
 func diagprinter(x string, y string, z string) {
 	fmt.Printf("ssh diag@[Controller0IP] %s tgz > SR%s_%s_diag%s_C0.tgz\n", z, x, y, z)
-	fmt.Printf("ssh user@[Controller1IP] %s tgz > SR%s_%s_diag%s_C0.tgz\n", z, x, y, z)
+	fmt.Printf("ssh diag@[Controller1IP] %s tgz > SR%s_%s_diag%s_C1.tgz\n", z, x, y, z)
 }
